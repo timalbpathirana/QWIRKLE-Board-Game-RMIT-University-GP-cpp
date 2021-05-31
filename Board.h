@@ -25,7 +25,7 @@ class Board {
          * col as int
          * output: boolean
          */
-        bool placeTile(Tile* tile, char rowChar, int col, bool* qwirkleRow, bool* qwirkleCol, int& playerPoints);
+        bool placeTile(Tile* tile, char rowChar, int col, bool* qwirkleRow, bool* qwirkleCol);
 
         /**
          * check if tile exists, return false in order for tile to be added

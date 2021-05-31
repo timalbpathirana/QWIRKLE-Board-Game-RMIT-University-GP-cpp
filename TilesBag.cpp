@@ -5,7 +5,7 @@
 #include <random>
 
 #define MAX_NUM_OF_TILES_IN_HAND 6 // max number of tiles in player hand
- // the total number of tiles in the game
+#define NUM_OF_TILES 72  // the total number of tiles in the game
 
 TilesBag::TilesBag() {
     tiles = new LinkedList();
@@ -93,43 +93,26 @@ bool TilesBag::readOneTile(std::ifstream& file, char* colour, int* shape) {
 }
 
 void TilesBag::initBag(){
-        std::string tilesBagFileName = "TilesBag.txt";
-        std::ifstream file(tilesBagFileName);
+    std::string tilesBagFileName = "tilesbag.txt";
+    std::ifstream file(tilesBagFileName);
         
-        int numRead = 0;
-        while(!file.eof() && numRead < NUM_OF_TILES) {
+    int numRead = 0;
+    while(!file.eof() && numRead < NUM_OF_TILES) {
         char colour = 'R';
         int shape = 1;   
         bool readSuccess = false; 
         
         readSuccess = readOneTile(file, &colour, &shape);
         
-            if (!file.eof() && readSuccess) {
-                Tile* tile = new Tile(colour, shape);
-                tiles->addBack(tile);
-                ++numRead;
-            }
-        }   
-}
+        if (!file.eof() && readSuccess) {
+            Tile* tile = new Tile(colour, shape);
+            
+            tiles->addBack(tile);
+            ++numRead;
+        }
+    }
 
-void TilesBag::initBagForM3(){
-    std::string tilesBagFileName = "advancedTilesBag.txt";
-        std::ifstream file(tilesBagFileName);
-        
-        int numRead = 0;
-        while(!file.eof() && numRead < NUM_OF_TILES_M3) {
-        char colour = 'R';
-        int shape = 1;   
-        bool readSuccess = false; 
-        
-        readSuccess = readOneTile(file, &colour, &shape);
-        
-            if (!file.eof() && readSuccess) {
-                Tile* tile = new Tile(colour, shape);
-                tiles->addBack(tile);
-                ++numRead;
-            }
-        }   
+    
 }
 
 LinkedList* TilesBag::moveTileFromBagToPlayerHand(int numOfTiles) {

@@ -1,0 +1,17 @@
+
+TESTING STARTED
+Starting a New Game
+
+Enter a single name for player 1 (uppercase characters only)
+>Invalid Input
+>
+Enter a name for player 2 (uppercase characters only)
+>Invalid Input
+>
+Let's Play!
+
+Player One: JOHN
+Player Two: MIKE
+Tile Bag Size 72
+TESTING FINISHED
+

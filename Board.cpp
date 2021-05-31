@@ -1,5 +1,4 @@
 #include "Board.h"
-#include <stdlib.h>
 
 Board::Board() {
     tilesOnBoard = 0;
@@ -15,17 +14,9 @@ Board::Board() {
         }
     }
 };
-Board::~Board() {
-    for(int i= 0; i < BOARD_DIM; i++){
-        for(int y = 0; y < BOARD_DIM; y++){
-            if(playingBoard[i][y] != nullptr){
-                delete playingBoard[i][y];
-            }
-        }
-    }
-};
+Board::~Board() {};
 
-bool Board::placeTile(Tile* tile, char rowChar, int col, bool* qwirkleRow, bool* qwirkleCol, int& playerPoints) {
+bool Board::placeTile(Tile* tile, char rowChar, int col, bool* qwirkleRow, bool* qwirkleCol) {
     bool toReturn = false;
     int row = charToInt(rowChar);
     // if there is no tile yet, then no need to check anything
@@ -281,7 +272,7 @@ bool Board::placeTile(Tile* tile, char rowChar, int col, bool* qwirkleRow, bool*
 
                 if (colCheck == 3 || colCheck == 4) {
                         tile->setColRule(upSide->getColRule());
-                } else if (colCheck == 5 || colCheck == 6 || colCheck == 11 || colCheck == 12 || colCheck == 15 || colCheck == 16) {
+                } else if (colCheck == 5 || colCheck == 6 || colCheck == 11 || colCheck == 12 || colCheck == 15) {
                     std::string toAdd;
                     if (colCheck == 5 || colCheck == 11 || colCheck == 15) {
                         toAdd += 'C'; toAdd += tile->getColourCode();
@@ -321,7 +312,6 @@ bool Board::placeTile(Tile* tile, char rowChar, int col, bool* qwirkleRow, bool*
                     // std::cout << "QWIRKLE! at: " << tile->getTileCode() << std::endl;
                     *qwirkleRow = true;
                 }
-                playerPoints = playerPoints + ((rowCount - 1) * 2);
 
                 // col
                 int colCount = 1;
@@ -335,7 +325,6 @@ bool Board::placeTile(Tile* tile, char rowChar, int col, bool* qwirkleRow, bool*
                     // std::cout << "QWIRKLE! at: " << tile->getTileCode() << std::endl;
                     *qwirkleCol = true;
                 }
-                playerPoints = playerPoints + ((colCount - 1) * 2);
             }
         }
     }
@@ -402,7 +391,6 @@ void Board::printPlayingBoard() {
         int top = 100;
         int right = -100;
         int bottom = -100;
-
         for (int i = 0; i < BOARD_DIM; i++) {
             for (int ii = 0; ii < BOARD_DIM; ii++) {
                 if (playingBoard[i][ii] != nullptr) {
@@ -421,7 +409,6 @@ void Board::printPlayingBoard() {
                 }
             }
         }
-
 
         int topStart = 0;
         if (top - 1 > 0) {
@@ -464,25 +451,7 @@ void Board::printPlayingBoard() {
                         std::cout << intToChar(i)  << " |";
                     } else {
                         if (playingBoard[i][ii] != nullptr) {
-                            
-                            if(playingBoard[i][ii]->getColourCode() == 'R'){
-                                std::cout <<RED_COLOR<<playingBoard[i][ii]->getTileCode() <<COLOUR_RESET<< '|';
-
-                            }else if(playingBoard[i][ii]->getColourCode() == 'O'){
-                                std::cout <<ORANGE_COLOR<<playingBoard[i][ii]->getTileCode() <<COLOUR_RESET<< '|';
-
-                            }else if (playingBoard[i][ii]->getColourCode() == 'Y') {
-                                std::cout <<YELLOW_COLOR<<playingBoard[i][ii]->getTileCode() <<COLOUR_RESET<< '|';
-
-                            }else if (playingBoard[i][ii]->getColourCode() == 'G') {
-                                std::cout <<GREEN_COLOR<<playingBoard[i][ii]->getTileCode() <<COLOUR_RESET<< '|';
-
-                            }else if (playingBoard[i][ii]->getColourCode() == 'B') {
-                                std::cout <<BLUE_COLOUR<<playingBoard[i][ii]->getTileCode() <<COLOUR_RESET<< '|';
-
-                            }else if (playingBoard[i][ii]->getColourCode() == 'P') {
-                                std::cout <<PURPLE_COLOR<<playingBoard[i][ii]->getTileCode() <<COLOUR_RESET<< '|';
-                            }   
+                            std::cout << playingBoard[i][ii]->getTileCode() << '|';
                         } else {
                             std::cout << "  |";
                         }
@@ -494,10 +463,6 @@ void Board::printPlayingBoard() {
         std::cout << std::endl;
     }
 };
-
-
-
-
 
 char Board::intToChar(int num) {
     char toReturn = num + 65;
@@ -541,7 +506,6 @@ bool Board::placeTileString(std::string tileString, bool* qwirkleRow, bool* qwir
     std::stringstream posStream(posCodeSub);
     int col; posStream >> col;
     Tile* newTile = new Tile(tileCode[0], tileCode[1]-'0');
-    int i = 0;
     
-    return placeTile(newTile, row, col, qwirkleRow, qwirkleCol,i);
+    return placeTile(newTile, row, col, qwirkleRow, qwirkleCol);
 }

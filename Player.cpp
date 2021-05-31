@@ -13,7 +13,7 @@ Player::Player(int playerNum) {
     playerHand = new LinkedList();
 }
 Player::~Player() {
-    delete playerHand; 
+    delete playerHand; // 
 };
 
 int Player::getPlayerNum() {

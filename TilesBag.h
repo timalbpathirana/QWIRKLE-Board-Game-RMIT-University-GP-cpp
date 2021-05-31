@@ -13,7 +13,6 @@ class TilesBag {
     void initBag();
     LinkedList* moveTileFromBagToPlayerHand(int numOfTiles);
     void printBag();
-    void initBagForM3();
 
     // changed methods
     // LinkedList* shuffleBag();

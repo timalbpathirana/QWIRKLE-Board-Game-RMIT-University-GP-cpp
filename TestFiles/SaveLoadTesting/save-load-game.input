@@ -1,10 +1,10 @@
 2
-TestFiles/M2Testing/SaveLoadTesting/game5
+TestFiles/SaveLoadTesting/game5
 place Y5 at K19
 place B6 at H7
 save gametest
 ^C
-./assign1 <TestFiles/M2Testing/SaveLoadTesting/input.input
+./assign1 <TestFiles/SaveLoadTesting/input.input
 2
 gametest
 place Y6 at G7

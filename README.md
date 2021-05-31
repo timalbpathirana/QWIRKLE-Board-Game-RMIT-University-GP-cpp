@@ -19,9 +19,12 @@ In this game, player can,
 
 Below are some screenshot of the game. 
 
-<img width="398" alt="Screen Shot 2021-05-28 at 1 13 23 am" src="https://user-images.githubusercontent.com/68840709/119851672-f0e92700-bf51-11eb-8e89-273574b3221b.png">
+<img width="406" alt="Screen Shot 2021-05-16 at 6 46 47 pm" src="https://user-images.githubusercontent.com/68840709/118391364-374ba580-b677-11eb-9109-75c14eb3fcc6.png">
 
-<img width="376" alt="Screen Shot 2021-05-28 at 1 13 01 am" src="https://user-images.githubusercontent.com/68840709/119851763-078f7e00-bf52-11eb-9fdc-dee461cc972b.png">
+<img width="410" alt="Screen Shot 2021-05-16 at 6 47 03 pm" src="https://user-images.githubusercontent.com/68840709/118391372-429ed100-b677-11eb-8265-aad849122914.png">
+
+<img width="408" alt="Screen Shot 2021-05-16 at 6 47 28 pm" src="https://user-images.githubusercontent.com/68840709/118391381-4a5e7580-b677-11eb-9ce3-9bf854a13eb9.png">
+
 	
 ## How to run
 #### Use make file to compile the project  ``` $ make ```
