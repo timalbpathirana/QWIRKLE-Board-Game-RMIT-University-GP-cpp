@@ -1,0 +1,18 @@
+2
+TestFiles/M2Testing/SaveLoadTesting/game5
+place Y5 at K19
+place B6 at H7
+save gametest
+^C
+./assign1 <TestFiles/M2Testing/SaveLoadTesting/input.input
+2
+gametest
+place Y6 at G7
+place O6 at F7
+place O4 at F6
+place P4 at E6
+place O3 at F5
+place P6 at E7
+place O5 at F4
+place B1 at H13
+place O1 at F3

@@ -1,0 +1,18 @@
+----------------------------------
+Name: Danny Van
+Student ID: S-3717353
+Email: s3717353@student.rmit.edu.au
+
+Name: Wafaa Qaroma
+Student ID: S-3775892
+Email: s3775892@student.rmit.edu.au
+
+Name: Hoang Dang Khoa La
+Student ID: S-3704571
+Email: s3704571@student.rmit.edu.au
+
+Name: Timal Pathirana
+Student ID: S-3703235
+Email: s3703235@student.rmit.edu.au
+----------------------------------
+
